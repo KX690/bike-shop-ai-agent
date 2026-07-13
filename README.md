@@ -361,6 +361,93 @@ Fuentes:
 
 ---
 
+# 💬 Ejemplos de Preguntas y Respuestas
+
+A continuación se muestran ejemplos reales de preguntas realizadas al agente y las respuestas generadas, obtenidas a partir de los documentos incluidos en `data/documentos/`.
+
+## Ejemplo 1 — Política de devoluciones
+
+**Pregunta:**
+```
+¿Cuántos días tengo para devolver una bicicleta?
+```
+
+**Respuesta del agente:**
+```
+Dispone de un plazo de 30 días corridos desde la fecha de recepción del producto para
+solicitar una devolución o cambio.
+
+Para el caso de las bicicletas, estas deben cumplir con las siguientes condiciones:
+- No deben presentar signos de rodado (como barro, rayones de uso, o ajustes de frenos
+  o cambios realizados por el cliente).
+- Deben encontrarse en perfecto estado, sin uso, con el embalaje original y todos sus
+  accesorios, manuales y etiquetas.
+```
+**Fuentes:** `politica_devoluciones_y_garantias.pdf` (categoría: politicas, páginas 1-2), `catalogo_bicicletas_y_accesorios.pdf` (categoría: productos).
+
+---
+
+## Ejemplo 2 — Recomendación de producto según peso y altura
+
+**Pregunta:**
+```
+Peso 105 kg y mido 1.80m, ¿qué bicicleta de montaña me recomendás?
+```
+
+**Respuesta del agente:**
+```
+De acuerdo con la información de nuestro catálogo, para tu peso de 105 kg, las opciones
+recomendadas en bicicletas de montaña (MTB) son las siguientes, ya que se encuentran
+dentro de los límites de carga recomendados:
+
+1. MTB Hardtail (cuadro de aluminio): soporta un límite de peso de hasta 110 kg.
+   Precios orientativos: gama entrada 600.000 a 900.000 pesos, gama media 900.000 a
+   1.500.000 pesos, gama alta 1.500.000 a 2.500.000 pesos.
+
+2. MTB Doble Suspensión: soporta un límite de peso de hasta 120 kg.
+   Precios orientativos: gama entrada 1.800.000 a 2.500.000 pesos, gama media
+   2.500.000 a 4.000.000 pesos, gama alta 4.000.000 a 7.000.000 pesos.
+
+Nota: si con la carga adicional superás el límite recomendado, te sugerimos consultar
+por los modelos de cuadro reforzado (línea Heavy Duty) o por modelos eléctricos.
+```
+**Fuentes:** `catalogo_bicicletas_y_accesorios.pdf` (categoría: productos).
+
+---
+
+## Ejemplo 3 — Precio de un producto
+
+**Pregunta:**
+```
+¿Cuánto cuesta una bicicleta eléctrica?
+```
+
+**Respuesta del agente:**
+```
+De acuerdo con nuestro catálogo, los precios orientativos para una bicicleta eléctrica
+(e-bike) varían según su gama:
+
+- Gama entrada: 2.500.000 a 3.500.000 pesos.
+- Gama media: 3.500.000 a 5.500.000 pesos.
+- Gama alta: 5.500.000 a 9.000.000 pesos.
+```
+**Fuentes:** `catalogo_bicicletas_y_accesorios.pdf` (categoría: productos).
+
+---
+
+## Otras preguntas que el agente puede responder
+
+- ¿Cuáles son los tiempos de entrega para el área metropolitana?
+- ¿El envío de una bicicleta completa tiene costo adicional?
+- ¿Qué cubre la garantía de fábrica de una e-bike?
+- ¿Qué datos personales recopila la tienda y para qué los usa?
+- ¿Puedo retirar mi pedido en sucursal?
+- ¿Qué talla de cuadro me corresponde si mido 1.75m?
+
+Si la pregunta no puede responderse con la información de los documentos indexados, el agente responde explícitamente: *"No encontré información en los documentos."* — evitando inventar datos que no estén en las fuentes oficiales.
+
+---
+
 # 🔐 Seguridad
 
 La información sensible nunca se almacena en el código fuente. El proyecto utiliza variables de entorno, OCI Instance Principals, políticas de OCI IAM y permisos de OCI Object Storage.
