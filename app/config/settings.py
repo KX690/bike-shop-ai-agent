@@ -61,19 +61,17 @@ class Settings:
     # EMBEDDINGS
     # =========================
 
-    CHUNKS_MODEL_TOKENIZER: str = (
-        "BAAI/bge-m3"
-    )
-    EMBEDDING_MODEL_UNO: str = (
-        "BAAI/bge-m3"
-    )
-    EMBEDDING_MODEL_DOS: str = (
-        "all-MiniLM-L6-v2"  # prueba local
+    EMBEDDING_MODEL: str = (
+        "models/gemini-embedding-001"
     )
 
     # =========================
     # CHUNKING
     # =========================
+
+    CHUNKS_TOKENIZER_ENCODING: str = (
+        "cl100k_base"
+    )
 
     CHUNK_SIZE: int = 1250
 

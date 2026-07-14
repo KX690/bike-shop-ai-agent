@@ -30,7 +30,7 @@ Cada respuesta incluye su fuente correspondiente, permitiendo a los usuarios val
 - 🧹 Pipeline inteligente de limpieza de documentos
 - 🏷 Enriquecimiento de metadatos por documento
 - ✂️ Generación de fragmentos semánticos
-- 🧠 Embeddings de HuggingFace
+- 🧠 Embeddings de Google Gemini (sin dependencias pesadas locales)
 - 🔍 Base de datos vectorial FAISS
 - 📚 Recuperación consciente del contexto (MMR)
 - 🤖 Integración con Google Gemini
@@ -205,23 +205,20 @@ bike-shop-ai-agent/
 ## IA & LLM
 
 - LangChain
-- Google Gemini
-- OpenAI (opcional)
-- Cohere (opcional)
+- Google Gemini (modelo de chat y modelo de embeddings)
 
 ---
 
 ## Recuperación
 - FAISS
-- HuggingFace Embeddings
-- Sentence Transformers
+- Gemini Embeddings (`gemini-embedding-001`)
 
 ---
 
 ## Procesamiento de Documentos
 - PyPDF
 - LangChain Document Loaders
-- LangChain Text Splitters
+- LangChain Text Splitters (tokenizador `tiktoken`)
 
 ---
 
@@ -308,23 +305,19 @@ Cada documento recibe metadatos adicionales utilizados durante la recuperación 
 |------------|------:|
 | Tamaño del Fragmento | 1250 tokens |
 | Superposición | 150 tokens |
-| Tokenizador | BAAI/bge-m3 |
+| Tokenizador | tiktoken (`cl100k_base`) |
 
 ---
 
 # 🧠 Embeddings
 
-Modelo de producción por defecto:
+El proyecto utiliza el modelo de embeddings de Google Gemini (vía API, sin dependencias pesadas locales como PyTorch):
 
 ```
-BAAI/bge-m3
+models/gemini-embedding-001
 ```
 
-Modelo local alternativo (usado por defecto en `settings.py` para pruebas):
-
-```
-all-MiniLM-L6-v2
-```
+Esta decisión evita instalar PyTorch/Transformers/Sentence-Transformers, lo que reduce drásticamente el tamaño de la imagen Docker y el tiempo de arranque en entornos con recursos limitados (por ejemplo, instancias gratuitas de OCI Compute).
 
 ---
 
@@ -727,7 +720,7 @@ La aplicación utiliza **logging centralizado**, disponible vía `docker logs bi
 - Pipeline de limpieza de texto
 - Enriquecimiento de metadatos
 - Fragmentación semántica (chunking)
-- HuggingFace Embeddings
+- Embeddings de Google Gemini
 - FAISS Vector Store
 - Integración con Google Gemini
 - Atribución de fuentes
@@ -764,7 +757,7 @@ Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archiv
 
 # 🙏 Agradecimientos
 
-Este proyecto fue posible gracias al ecosistema de código abierto: LangChain, Hugging Face, Google Gemini, Meta FAISS, Streamlit, Oracle Cloud Infrastructure y la comunidad de Python.
+Este proyecto fue posible gracias al ecosistema de código abierto: LangChain, Google Gemini, Meta FAISS, Streamlit, Oracle Cloud Infrastructure y la comunidad de Python.
 
 Arquitectura basada en el proyecto [Clinic AI Agent](https://github.com/solanomillo/clinic-ai-agent) de Julio Solano, adaptada a un caso de uso de e-commerce de bicicletas.
 

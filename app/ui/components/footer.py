@@ -25,7 +25,7 @@ def render_footer() -> None:
             <br><br>
             <strong>Tecnologías</strong>
             <br>
-            Streamlit • LangChain • FAISS • Google Gemini • HuggingFace
+            Streamlit • LangChain • FAISS • Google Gemini
             <br><br>
             <span style="font-size:0.8rem; color:#95a5a6;">
                 Versión 1.0.0
