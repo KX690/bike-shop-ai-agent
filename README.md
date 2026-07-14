@@ -674,6 +674,22 @@ docker logs -f bike-shop-ai-agent
 
 ---
 
+# 🌐 Evidencia del Deploy
+
+La aplicación está desplegada y funcionando en una instancia de **OCI Compute** (`VM.Standard.E2.1.Micro`, Ubuntu 24.04), corriendo dentro de un contenedor Docker, con red pública configurada (VCN, Internet Gateway, Subnet pública) y autenticación a OCI Object Storage mediante **Instance Principals** (sin claves copiadas al servidor).
+
+**URL pública:**
+
+```
+http://136.248.88.214:8501
+```
+
+**Captura de la aplicación en funcionamiento**, respondiendo una consulta real sobre recomendación de talle según altura:
+
+![CicloStore AI desplegado en OCI](assets/deploy_oci_evidencia.png)
+
+---
+
 # 📦 Estructura de Object Storage
 
 ```text
